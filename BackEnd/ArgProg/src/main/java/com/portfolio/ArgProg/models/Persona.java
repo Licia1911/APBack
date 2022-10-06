@@ -13,35 +13,34 @@ public class Persona implements Serializable {
     private Long id;
     private String nombre;
     private String titulo;
-    private String desc;
+    private String descripcion;
     private String fotoPerfil;
-    private String git;
-    private String link;
+    private String github;
+    private String linkedIn;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy="idEdu")
     private List<Educacion>educacionList;
 
-    @OneToMany(fetch = FetchType.LAZY,  mappedBy = "idExp")
+    @OneToMany(fetch = FetchType.LAZY,  mappedBy="idExp")
     private List<Experiencia>experienciaList;
 
-    @OneToMany(fetch = FetchType.LAZY,  mappedBy = "idSkill")
+    @OneToMany(fetch = FetchType.LAZY,  mappedBy="idSkill")
     private List<Skills>skillsList;
 
-    @OneToMany(fetch = FetchType.LAZY,  mappedBy = "idPro")
+    @OneToMany(fetch = FetchType.LAZY,  mappedBy="idPro")
     private List<Proyectos>proyectosList;
-
 
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String titulo, String desc, String fotoPerfil, String git, String link) {
+    public Persona(Long id, String nombre, String titulo, String descripcion, String fotoPerfil, String github, String linkedIn) {
         this.id = id;
         this.nombre = nombre;
         this.titulo = titulo;
-        this.desc = desc;
+        this.descripcion = descripcion;
         this.fotoPerfil = fotoPerfil;
-        this.git = git;
-        this.link = link;
+        this.github = github;
+        this.linkedIn = linkedIn;
     }
 
     public Long getId() {
@@ -68,12 +67,12 @@ public class Persona implements Serializable {
         this.titulo = titulo;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getFotoPerfil() {
@@ -84,20 +83,19 @@ public class Persona implements Serializable {
         this.fotoPerfil = fotoPerfil;
     }
 
-    public String getGit() {
-        return git;
+    public String getGithub() {
+        return github;
     }
 
-    public void setGit(String git) {
-        this.git = git;
+    public void setGithub(String github) {
+        this.github = github;
     }
 
-    public String getLink() {
-        return link;
+    public String getLinkedIn() {
+        return linkedIn;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setLinkedIn(String linkedIn) {
+        this.linkedIn = linkedIn;
     }
-
 }
