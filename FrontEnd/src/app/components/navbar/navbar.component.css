@@ -1,0 +1,67 @@
+.offcanvas{
+    background-color: rgb(57, 56, 56);
+}
+
+.navbar{
+    background-color: rgb(57, 56, 56) !important;
+}
+
+#edit{
+    color: #f033b1;
+}
+
+
+#fotoPerfil{
+    width: 80%;
+    border-radius: 100%;
+    margin-bottom: 8px;
+    box-shadow: 5px 5px 5px  rgb(42, 40, 40);
+}
+
+h3{
+    color: rgb(196, 200, 200);
+    text-shadow: 5px 5px 5px rgb(42, 40, 40);
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 8px;
+}
+
+.sidebar-nav ul li a {
+    color: rgb(196, 200, 200);
+    text-shadow: 5px 5px 5px rgb(42, 40, 40);
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    text-decoration: none;
+    display: block;
+    padding: 6px 8px;
+    transition: 0.5s;
+}
+.sidebar-nav ul li a:hover {
+    color: #f033b1;
+}
+.sidebar-nav .offcanvas {
+    width: 230px;
+    border: none;
+}
+.sidebar-nav .offcanvas ul li a span {
+    font-size: 18px;
+    position: relative;
+    top: -4px;
+    transition: 0.5s;
+}
+.sidebar-nav .offcanvas.show ul li a:hover span {
+    padding-left: 10px;
+}
+.sidebar-nav .dropdown-toggle::after {
+    position: relative;
+    top: 3px;
+}
+
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before
+{
+    margin-right: 5px;
+    background-color : transparent;
+}
+
+#logo{
+    width: 60%;
+}
