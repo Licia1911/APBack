@@ -1,5 +1,6 @@
 package com.portfolio.ArgProg.services;
 
+import com.portfolio.ArgProg.exception.UserNotFoundException;
 import com.portfolio.ArgProg.models.Persona;
 import com.portfolio.ArgProg.repository.PersonaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,9 @@ public class PersonaService {
 
     public void borrarPersona(Long id){
         personaRepo.deleteById(id);
+    }
+
+    public Persona buscarPersonaPorId(Long id){
+        return personaRepo.findById(id).orElseThrow(()->new UserNotFoundException("Persona no encontrada"));
     }
 }
