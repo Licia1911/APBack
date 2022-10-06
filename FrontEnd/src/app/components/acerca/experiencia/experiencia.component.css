@@ -1,0 +1,8 @@
+.card {
+    margin-top: 20px;
+    border: 2px solid #f033b1; 
+}
+
+.card-header{
+    border-bottom: 0.5px solid #f033b1;
+}
