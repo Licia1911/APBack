@@ -9,14 +9,14 @@
 
             <!-- Menus List -->
             <div class="offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
+                aria-labelledby="offcanvasNavbarLabel"  *ngIf="persona">
                 <div class="offcanvas-body">
                     <ul class="navbar-nav"><i id="edit" class="bi bi-pencil-square" style="font-size: 1rem;"></i>
-                        <img id="fotoPerfil"  src="https://i.ibb.co/b3t5tBQ/Foto-Perfil.jpg" alt="">
-                        <h3>Carreras Licia</h3>
-                        <li><a href="#"><i class="bi bi-github"></i> <span class="item-text">Github</span></a></li>
-                        <li><a href="#"><i class="bi bi-linkedin"></i> <span
-                                    class="item-text">Linkedin</span></a></li>
+                        <img id="fotoPerfil" src={{persona.fotoPerfil}}  alt="">
+                        <h3>{{persona.nombre}}</h3>
+                        <li><a href={{persona.github}}><i class="bi bi-github"></i> <span class="item-text">Github</span></a></li>
+                        <li><a href={{persona.linkedIn}}><i class="bi bi-linkedin"></i> <span
+                        class="item-text">Linkedin</span></a></li>
                         <li><a href="#"><i class="bi bi-house-heart"></i> <span class="item-text">Inicio</span></a></li>
                         <li><a href="#"><i class="bi bi-person-heart"></i> <span class="item-text">Acerca de mí</span></a></li>
                         <li><a href="#"><i class="bi bi-person-check-fill"></i> <span class="item-text">Skills</span></a>

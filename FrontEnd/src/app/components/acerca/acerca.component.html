@@ -1,7 +1,7 @@
 <div class="row">
-    <div id="sobre" class="col-xs-12 col-md-10 col-lg-10">
+    <div id="sobre" class="col-xs-12 col-md-10 col-lg-10" *ngIf="persona">
         <h1><i class="bi bi-person-heart"></i>Acerca de Mí</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, vel in nulla fugit itaque voluptatibus quam reprehenderit temporibus aliquam rem reiciendis possimus voluptas ipsa libero ad est quasi aperiam veniam!</p>
+        <p>{{persona.descripcion}}</p>
     </div>
     <div id="img-sobre" class="col-xs-10 col-md-3 col-lg-3">
         <img src= "https://i.ibb.co/1R8vyjC/img-about.webp" alt="">

@@ -1,8 +1,8 @@
 <seccion id="inicio" class="banner d-flex align-items-center justify-content-center"
 [ngStyle]="{ 'background-image': 'url(' + 'https://miro.medium.com/max/1838/1*9QAFOlvmyrHG2ZBziK-p2w.jpeg' + ')' }">
 
-    <div id="banner-text" class="texto">
-        <h1 class="display-3 fw-bold">Carreras Licia</h1>
-        <p class="fs-4">Desarrolladora Full Stack Jr.</p>
+    <div id="banner-text" class="texto" *ngIf="persona">
+        <h1 class="display-3 fw-bold">{{persona.nombre}}</h1>
+        <p class="fs-4">{{persona.titulo}}</p>
     </div>
 </seccion>
