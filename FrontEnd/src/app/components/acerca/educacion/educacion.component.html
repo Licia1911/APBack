@@ -1,10 +1,9 @@
-<div class="edu">
+<div class="edu" *ngFor="let educacion of educaciones">
     <div class="card bg-transparent mb-3" style="max-width: 15rem;">
         <div class="card-header">
-            <h4>Institución:</h4></div>
+            <h4>{{educacion.tituloEdu}}:</h4></div>
         <div class="card-body">
-            <h5 class="card-title">Titulo:</h5>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime tenetur placeat officia facere nobis rem!</p>
+            <p class="card-text">{{educacion.descEdu}}</p>
         </div>
     </div>
 </div>
