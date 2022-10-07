@@ -13,15 +13,19 @@ public class Proyectos {
     private String imgPro;
     private String tituloPro;
     private String descPro;
+    private String demoUrl;
+    private String repoUrl;
 
     public Proyectos() {
     }
 
-    public Proyectos(Long idPro, String imgPro, String tituloPro, String descPro) {
+    public Proyectos(Long idPro, String imgPro, String tituloPro, String descPro, String demoUrl, String repoUrl) {
         this.idPro = idPro;
         this.imgPro = imgPro;
         this.tituloPro = tituloPro;
         this.descPro = descPro;
+        this.demoUrl = demoUrl;
+        this.repoUrl = repoUrl;
     }
 
     public Long getIdPro() {
@@ -54,5 +58,21 @@ public class Proyectos {
 
     public void setDescPro(String descPro) {
         this.descPro = descPro;
+    }
+
+    public String getDemoUrl() {
+        return demoUrl;
+    }
+
+    public void setDemoUrl(String demoUrl) {
+        this.demoUrl = demoUrl;
+    }
+
+    public String getRepoUrl() {
+        return repoUrl;
+    }
+
+    public void setRepoUrl(String repoUrl) {
+        this.repoUrl = repoUrl;
     }
 }
