@@ -6,8 +6,11 @@
     background-color: rgb(57, 56, 56) !important;
 }
 
-#edit{
+#btnEdit{
+    background: transparent;
+    border: none;
     color: #f033b1;
+    margin-left: 180px;
 }
 
 
@@ -64,7 +67,29 @@ h3{
 }
 
 
-
 #logo{
     width: 60%;
+}
+
+#MyModal{
+    background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200);
+}
+
+input, textarea{
+    background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200) !important;
+}
+
+.btn-secondary, .btn-primary{
+    border-color: #f033b1;
+    margin-left: 18px;
+    color: #f033b1;
+    background: transparent;
+}
+
+.btn-close{
+    background-color: #f033b1 !important;
 }
