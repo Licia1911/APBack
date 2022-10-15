@@ -1,0 +1,30 @@
+.tec{
+    margin-bottom: 25px;
+    margin-right: 80px;
+    margin-left: 50px;
+}
+
+i{
+    color: #f033b1;
+    margin-bottom: 20px;
+}
+
+#borrar{
+    margin-left: 260px;
+
+}
+
+#itec{
+    color:  rgb(196, 200, 200);
+    margin-right: 3px;
+}
+
+.progress-bar{
+    background-color: #f033b1;
+}
+
+@media screen and (max-width: 650px){
+    .tec{
+        margin-left: 80px;
+    }
+}

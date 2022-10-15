@@ -13,10 +13,10 @@ export class BannerService {
   constructor(private http: HttpClient) { }
 
   public getUser():Observable<Persona>{
-    return this.http.get<Persona>(`${this.apiServerUrl}/persona/id/1`);
+    return this.http.get<Persona>(`${this.apiServerUrl}/api/persona/1`);
   }
 
   public updatePersona(persona: Persona):Observable<Persona>{
-    return this.http.put<Persona>(`${this.apiServerUrl}/persona/update`, persona);
+    return this.http.put<Persona>(`${this.apiServerUrl}/api/persona`, persona);
   }
 }

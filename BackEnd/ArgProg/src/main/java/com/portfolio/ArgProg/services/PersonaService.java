@@ -28,15 +28,11 @@ public class PersonaService {
         return personaRepo.findAll();
     }
 
-    public Persona editarPersona(Persona persona){
+    public Persona updatePersona(Persona persona){
         return personaRepo.save(persona);
     }
 
-    public void borrarPersona(Long id){
-        personaRepo.deleteById(id);
-    }
-
-    public Persona buscarPersonaPorId(Long id){
+    public Persona findPersonaById(Long id){
         return personaRepo.findById(id).orElseThrow(()->new UserNotFoundException("Persona no encontrada"));
     }
 }

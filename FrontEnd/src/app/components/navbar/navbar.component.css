@@ -56,11 +56,14 @@ h3{
     top: 3px;
 }
 
+
 .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before
 {
     margin-right: 5px;
     background-color : transparent;
 }
+
+
 
 #logo{
     width: 60%;

@@ -1,6 +1,8 @@
 <div class="exp"  *ngFor="let experiencia of experiencias">
     <div class="card bg-transparent mb-3" style="max-width: 15rem;">
         <div class="card-header">
+            <i class="bi bi-pencil-square" style="font-size: 1rem;"></i>
+            <i class="bi bi-trash" style="font-size: 1rem;" id="borrar"></i>
             <h4>{{experiencia.tituloExp}}</h4></div>
         <div class="card-body">
             <h5 class="card-title">{{experiencia.fechaExp}}</h5>

@@ -12,6 +12,10 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { SkillsFComponent } from './components/skills/skills-f/skills-f.component';
+import { SkillsBComponent } from './components/skills/skills-b/skills-b.component';
+import { SkillsSComponent } from './components/skills/skills-s/skills-s.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { FormsModule } from '@angular/forms';
     ExperienciaComponent,
     SkillsComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    SkillsFComponent,
+    SkillsBComponent,
+    SkillsSComponent
   ],
   imports: [
     BrowserModule,

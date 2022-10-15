@@ -19,19 +19,19 @@ public class EducacionService {
         this.educacionRepo = educacionRepo;
     }
 
-    public Educacion addEducacion(Educacion educacion){
+    public Educacion addEducation(Educacion educacion){
         return educacionRepo.save(educacion);
     }
 
-    public List<Educacion>buscarEducaciones(){
+    public List<Educacion>findAllEducation(){
         return educacionRepo.findAll();
     }
 
-    public Educacion editarEducacion(Educacion educacion){
+    public Educacion updateEducation(Educacion educacion){
         return educacionRepo.save(educacion);
     }
 
-    public void borrarEducacion(Long id){
+    public void deleteEducation(Long id){
         educacionRepo.deleteById(id);
     }
 

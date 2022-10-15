@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/api/persona")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController {
 
@@ -17,15 +17,15 @@ public class PersonaController {
         this.personaService = personaService;
     }
 
-    @GetMapping("/id/{id}")
-    public ResponseEntity<Persona>obtenerPersona(@PathVariable("id") Long id){
-        Persona persona=personaService.buscarPersonaPorId(id);
+    @GetMapping("/{id}")
+    public ResponseEntity<Persona>getPersonaById(@PathVariable("id") Long id){
+        Persona persona=personaService.findPersonaById(id);
         return new ResponseEntity<>(persona, HttpStatus.OK);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Persona>editarPersona(@RequestBody Persona persona){
-        Persona updatePersona= personaService.editarPersona(persona);
+    @PutMapping
+    public ResponseEntity<Persona>updatePersona(@RequestBody Persona persona){
+        Persona updatePersona= personaService.updatePersona(persona);
         return new ResponseEntity<>(updatePersona, HttpStatus.OK);
     }
 }

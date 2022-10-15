@@ -30,4 +30,30 @@ export class NavbarComponent implements OnInit {
     })
   }
 
+  public onOpenModal(mode: String, Persona?: Persona): void {
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-bs-toggle', 'modal');
+    this.editPersona = this.persona;
+      button.setAttribute('data-bs-target', '#editPersonaModal');
+
+      container?.appendChild(button);
+      button.click();
+  }
+
+  public onUpdatePersona(persona: Persona): void {
+    this.editPersona = persona;
+    this.navbarService.updatePersona(persona).subscribe({
+      next:(response:Persona)=>{
+        console.log(response);
+        this.getUser();
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      },
+    });
+  }
+
 }

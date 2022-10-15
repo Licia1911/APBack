@@ -1,19 +1,24 @@
 package com.portfolio.ArgProg.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Proyectos {
+@Table(name = "proyectos")
+public class Proyectos implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false,name = "id_pro")
     private Long idPro;
+    @Column(length = 255,nullable = false,name = "img_pro")
     private String imgPro;
+    @Column(length = 255,nullable = false,name = "titulo_pro")
     private String tituloPro;
+    @Column(length = 255,nullable = false,name = "desc_pro")
     private String descPro;
+    @Column(length = 255,nullable = false,name = "demo_url")
     private String demoUrl;
+    @Column(length = 255,nullable = false,name = "repo_url")
     private String repoUrl;
 
     public Proyectos() {

@@ -6,3 +6,47 @@
 .card-header{
     border-bottom: 0.5px solid #f033b1;
 }
+
+i{
+    color: #f033b1;
+    margin-bottom: 20px;
+}
+
+#borrar{
+    margin-left: 140px;
+
+}
+
+.btn{
+    border-color: #f033b1;
+    margin-left: 18px;
+    color: #f033b1;
+    background: transparent;
+}
+
+
+#btnEdit{
+    background: transparent;
+    border: none;
+}
+
+#btnDelete{
+    background: transparent;
+    border: none;
+}
+
+#MyModal{
+    background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200);
+}
+
+.btn-close{
+    background-color: #f033b1 !important;
+}
+
+#tituloEdu, #descEdu, #tituloEdu1, #descEdu1 {
+    background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200);
+}

@@ -18,25 +18,15 @@
     margin-left: 20px;
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
     text-decoration: underline 5px #f033b1;
 }
 
-.tec{
-    margin-bottom: 25px;
-    margin-right: 80px;
-    margin-left: 50px;
+i{
+    color: #f033b1;
+    margin-left: 15px;
 }
 
-#itec{
-    color:  rgb(196, 200, 200);
-    margin-right: 3px;
-}
-
-.progress-bar{
-    background-color: #f033b1;
-}
 
 @media screen and (max-width: 650px){
     #sobreSkills{
@@ -50,8 +40,3 @@
     }
 }
 
-@media screen and (max-width: 650px){
-    .tec{
-        margin-left: 80px;
-    }
-}

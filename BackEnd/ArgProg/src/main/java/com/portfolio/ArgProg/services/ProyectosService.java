@@ -19,19 +19,19 @@ public class ProyectosService {
         this.proyectosRepo = proyectosRepo;
     }
 
-    public Proyectos addProyectos(Proyectos proyectos){
+    public Proyectos addProject(Proyectos proyectos){
         return proyectosRepo.save(proyectos);
     }
 
-    public List<Proyectos> buscarProyectos(){
+    public List<Proyectos> findAllProjects(){
         return proyectosRepo.findAll();
     }
 
-    public Proyectos editarProyectos(Proyectos proyectos){
+    public Proyectos updateProject(Proyectos proyectos){
         return proyectosRepo.save(proyectos);
     }
 
-    public void borrarProyectos(Long id){
+    public void deleteProject(Long id){
         proyectosRepo.deleteById(id);
     }
 }

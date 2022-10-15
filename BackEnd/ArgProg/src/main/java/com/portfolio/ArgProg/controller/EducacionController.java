@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/educacion")
+@RequestMapping("/api/educacion")
 @CrossOrigin(origins = "http://localhost:4200")
 public class EducacionController {
 
@@ -19,27 +19,27 @@ public class EducacionController {
         this.educacionService = educacionService;
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Educacion>> obtenerEducacion(){
-        List<Educacion> educaciones=educacionService.buscarEducaciones();
+    @GetMapping
+    public ResponseEntity<List<Educacion>> getAllEducation(){
+        List<Educacion> educaciones=educacionService.findAllEducation();
         return new ResponseEntity<>(educaciones, HttpStatus.OK);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Educacion>editarEducacion(@RequestBody Educacion educacion){
-        Educacion updateEducacion= educacionService.editarEducacion(educacion);
+    @PutMapping
+    public ResponseEntity<Educacion>updateEducation(@RequestBody Educacion educacion){
+        Educacion updateEducacion= educacionService.updateEducation(educacion);
         return new ResponseEntity<>(updateEducacion, HttpStatus.OK);
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<Educacion>crearEducacion(@RequestBody Educacion educacion){
-        Educacion nuevaEducacion=educacionService.addEducacion(educacion);
+    @PostMapping
+    public ResponseEntity<Educacion>addEducation(@RequestBody Educacion educacion){
+        Educacion nuevaEducacion=educacionService.addEducation(educacion);
         return new ResponseEntity<>(nuevaEducacion, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?>borrarEducacion(@PathVariable("id") Long id){
-        educacionService.borrarEducacion(id);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?>deleteEducation(@PathVariable("id") Long id){
+        educacionService.deleteEducation(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

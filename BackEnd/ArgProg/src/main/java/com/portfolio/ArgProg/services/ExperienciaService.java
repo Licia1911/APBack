@@ -19,19 +19,19 @@ public class ExperienciaService {
         this.experienciaRepo = experienciaRepo;
     }
 
-    public Experiencia addExperiencia(Experiencia experiencia){
+    public Experiencia addExperience(Experiencia experiencia){
         return experienciaRepo.save(experiencia);
     }
 
-    public List<Experiencia> buscarExperiencias(){
+    public List<Experiencia> findAllExperience(){
         return experienciaRepo.findAll();
     }
 
-    public Experiencia editarExperiencia(Experiencia experiencia){
+    public Experiencia updateExperience(Experiencia experiencia){
         return experienciaRepo.save(experiencia);
     }
 
-    public void borrarExperiencia(Long id){
+    public void deleteExperience(Long id){
         experienciaRepo.deleteById(id);
     }
 }

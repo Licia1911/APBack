@@ -6,3 +6,13 @@
 .card-header{
     border-bottom: 0.5px solid #f033b1;
 }
+
+i{
+    color: #f033b1;
+    margin-bottom: 20px;
+}
+
+#borrar{
+    margin-left: 160px;
+
+}

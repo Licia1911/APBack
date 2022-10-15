@@ -5,17 +5,24 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
+@Table(name = "persona")
 public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = false)
+    @Column(nullable = false, updatable = false, name = "id")
     private Long id;
+    @Column(name = "nombre", length = 255, nullable = false)
     private String nombre;
+    @Column(name = "titulo", length = 255, nullable = false)
     private String titulo;
+    @Column(name = "descripcion", length = 1000, nullable = false)
     private String descripcion;
+    @Column(name = "foto_perfil", length = 1000, nullable = false)
     private String fotoPerfil;
+    @Column(name = "github", length = 500, nullable = false)
     private String github;
+    @Column(name = "linked_in ", length = 500, nullable = false)
     private String linkedIn;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy="idEdu")
@@ -24,8 +31,14 @@ public class Persona implements Serializable {
     @OneToMany(fetch = FetchType.LAZY,  mappedBy="idExp")
     private List<Experiencia>experienciaList;
 
-    @OneToMany(fetch = FetchType.LAZY,  mappedBy="idSkill")
-    private List<Skills>skillsList;
+    @OneToMany(fetch = FetchType.LAZY,  mappedBy="idSkillF")
+    private List<SkillsF> skillsFList;
+
+    @OneToMany(fetch = FetchType.LAZY,  mappedBy="idSkillB")
+    private List<SkillsB> skillsBList;
+
+    @OneToMany(fetch = FetchType.LAZY,  mappedBy="idSkillS")
+    private List<SkillsS> skillsSList;
 
     @OneToMany(fetch = FetchType.LAZY,  mappedBy="idPro")
     private List<Proyectos>proyectosList;

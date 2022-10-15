@@ -3,6 +3,18 @@ i{
     margin-right: 5px;
 }
 
+#add{
+    margin-left: 15px;
+}
+
+#editar{
+    margin-left: 70px;
+}
+
+#borrar{
+    margin-left: 230px;
+}
+
 #sobreProy{
     margin-left: 40px;
     margin-top: 40px;

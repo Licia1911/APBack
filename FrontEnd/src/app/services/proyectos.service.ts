@@ -13,18 +13,18 @@ export class ProyectosService {
   constructor(private http:HttpClient) { }
 
   public getProyectos():Observable<Proyectos[]>{
-    return this.http.get<Proyectos[]>(`${this.apiServerUrl}/proyectos/all`);
+    return this.http.get<Proyectos[]>(`${this.apiServerUrl}/api/proyectos`);
   }
 
   public addProyectos(proyectos: Proyectos):Observable<Proyectos>{
-    return this.http.post<Proyectos>(`${this.apiServerUrl}/proyectos/add`, proyectos);
+    return this.http.post<Proyectos>(`${this.apiServerUrl}/api/proyectos`, proyectos);
   }
 
   public updateProyectos(proyectos: Proyectos):Observable<Proyectos>{
-    return this.http.put<Proyectos>(`${this.apiServerUrl}/proyectos/update`, proyectos);
+    return this.http.put<Proyectos>(`${this.apiServerUrl}/api/proyectos`, proyectos);
   }
 
   public deleteProyectos(proyectosId: number):Observable<void>{
-    return this.http.delete<void>(`${this.apiServerUrl}/proyecto/delete/${proyectosId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/proyecto/${proyectosId}`);
   }
 }
