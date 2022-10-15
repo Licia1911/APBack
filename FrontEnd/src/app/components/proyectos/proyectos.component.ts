@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Proyectos } from 'src/app/models/proyectos';
 import { ProyectosService } from 'src/app/services/proyectos.service';
 
@@ -11,6 +12,9 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
 export class ProyectosComponent implements OnInit {
 
   public proyectoss: Proyectos[]=[];
+  public proyectoss2 = this.proyectosService.getProyectos;
+  public editProyecto: Proyectos | undefined;
+  public deleteProyecto: Proyectos | undefined;
 
   constructor(private proyectosService: ProyectosService) { }
 
@@ -27,6 +31,65 @@ export class ProyectosComponent implements OnInit {
         alert(error.message);
       }
     })
+  }
+
+  public onOpenModal(mode: String, proyectos?: Proyectos): void {
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-bs-toggle', 'modal');
+    if (mode === 'add') {
+      button.setAttribute('data-bs-target', '#addProyectosModal');
+    } else if (mode === 'delete') {
+      this.deleteProyecto = proyectos;
+      button.setAttribute('data-bs-target', '#deleteProyectosModal');
+    } else if (mode === 'edit') {
+      this.editProyecto = proyectos;
+      button.setAttribute('data-bs-target', '#editProyectosModal');
+    }
+    container?.appendChild(button);
+    button.click();
+  }
+
+  public onAddProyecto(addForm: NgForm): void {
+    document.getElementById('add-proyecto-form')?.click();
+    this.proyectosService.addProyectos(addForm.value).subscribe({
+      next:(response:Proyectos) => {
+        console.log(response);
+        this.getProyecto();
+        addForm.reset();
+      },
+      error:(error:HttpErrorResponse) => {
+        alert(error.message);
+        addForm.reset();
+      },
+    });
+  }
+
+  public onUpdateProyecto(proyectos: Proyectos): void {
+    this.editProyecto = proyectos;
+    this.proyectosService.updateProyectos(proyectos).subscribe({
+      next:(response:Proyectos)=>{
+        console.log(response);
+        this.getProyecto();
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      },
+    });
+  }
+
+  public onDeleteProyecto(idPro: number):void{
+    this.proyectosService.deleteProyectos(idPro).subscribe({
+      next:(response:void)=>{
+        console.log(response);
+        this.getProyecto();
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      },
+    });
   }
 
 }

@@ -25,6 +25,6 @@ export class ProyectosService {
   }
 
   public deleteProyectos(proyectosId: number):Observable<void>{
-    return this.http.delete<void>(`${this.apiServerUrl}/api/proyecto/${proyectosId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/proyectos/${proyectosId}`);
   }
 }

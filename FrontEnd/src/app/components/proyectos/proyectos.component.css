@@ -3,16 +3,41 @@ i{
     margin-right: 5px;
 }
 
-#add{
-    margin-left: 15px;
+
+.btn{
+    border-color: #f033b1;
+    margin-left: 18px;
+    color: #f033b1;
+    background: transparent;
 }
 
-#editar{
-    margin-left: 70px;
+
+#btnEdit{
+    background: transparent;
+    border: none;
+    margin-left: 60px;
 }
 
-#borrar{
-    margin-left: 230px;
+#btnDelete{
+    background: transparent;
+    border: none;
+    margin-left: 220px;
+}
+
+#MyModal{
+    background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200);
+}
+
+.btn-close{
+    background-color: #f033b1 !important;
+}
+
+input, textarea {
+    background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200) !important;
 }
 
 #sobreProy{
