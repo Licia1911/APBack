@@ -1,11 +1,131 @@
+<button id="agregar" type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addSkillsFModal"
+    (click)="onOpenModal('add')">Agregar Skill<span class="sr-only">(current)</span></button>
+
 <div class="front" *ngFor="let skillsF of skillsfront">
     <div class="tec">
-        <i class="bi bi-pencil-square" style="font-size: 1rem;"></i>
-        <i class="bi bi-trash" style="font-size: 1rem;" id="borrar"></i>
+
+        <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editSkillsFModal"
+        (click)="onOpenModal('edit', skillsF)"><i class="bi bi-pencil-square"
+            style="font-size: 1rem;"></i></button>
+        
+            <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteSkillsFModal"
+            (click)="onOpenModal('delete', skillsF)"><i class="bi bi-trash" style="font-size: 1rem;"
+                id="borrar"></i></button>  
+            
         <h5><i id="itec" class={{skillsF.iconoSkillF}}></i>{{skillsF.tituloSkillF}}</h5>
         <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="" aria-valuemin="0"
                 aria-valuemax="100">{{skillsF.progSkillF}}%</div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Agregar Skills Front -->
+
+<div class="modal fade" id="addSkillsFModal" tabindex="-1" aria-labelledby="addSkillsFModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="MyModal">
+                <h5 class="modal-title" id="addSkillsFModalLabel">Agregar Skill Front</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="MyModal">
+                <form #addForm="ngForm" (ngSubmit)="onAddSkillsfront(addForm)">
+                    <div class="mb-3">
+                        <label for="iconoSkillF" class="col-form-label">Icono:</label>
+                        <input type="text" name="iconoSkillF" ngModel class="form-control" id="iconoSkillF"
+                            placeholder="fa-brands fa-html5" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="tituloSkillF" class="col-form-label">Titulo:</label>
+                        <input type="text" name="tituloSkillF" ngModel class="form-control" id="tituloSkillF"
+                            placeholder="Html" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="progSkillF" class="col-form-label">Progreso:</label>
+                        <input type="text" name="progSkillF" ngModel class="form-control" id="progSkillF"
+                            placeholder="70" required />
+                    </div>
+
+                    <div class="modal-footer" id="MyModal">
+                        <button type="button" id="add-skillsfront-form" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cerrar</button>
+                        <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Editar Skills Front -->
+
+<div class="modal fade" id="editSkillsFModal" tabindex="-1" aria-labelledby="editSkillsFModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="MyModal">
+                <h5 class="modal-title" id="editSkillsFModalLabel">Editar Skills Front end</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="MyModal">
+                <form #editForm="ngForm">
+
+                    <input type="hidden" ngModel="{{ editSkillsfront?.idSkillF }}" name="idSkillF" class="form-control"
+                    id="idSkillF1" placeholder="" />
+
+                    <div class="mb-3">
+                        <label for="iconoSkillF" class="col-form-label">Icono:</label>
+                        <input type="text" name="iconoSkillF" ngModel="{{editSkillsfront?.iconoSkillF}}"
+                            class="form-control" id="iconoSkillF1" data-bs-whatever="@getbootstrap" placeholder="" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tituloSkillF" class="col-form-label">Titulo:</label>
+                        <input type="text" name="tituloSkillF" ngModel="{{editSkillsfront?.tituloSkillF}}"
+                            class="form-control" id="tituloSkillF1" data-bs-whatever="@getbootstrap" placeholder="" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="progSkillF" class="col-form-label">Progreso:</label>
+                        <input type="text" name="progSkillF" ngModel="{{editSkillsfront?.progSkillF}}"
+                        class="form-control" id="progSkillF1" data-bs-whatever="@getbootstrap" placeholder="" />
+                    </div>
+                    <div class="modal-footer" id="MyModal">
+                        <button type="button" id="1" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+                        <button (click)="onUpdateSkillsfront(editForm.value)" data-bs-dismiss="modal"
+                            class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Borrar Skills Front -->
+
+<div class="modal fade" id="deleteSkillsFModal" tabindex="-1" aria-labelledby="deleteSkillsFModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="MyModal">
+                <h5 class="modal-title" id="deleteSkillsFModal">Borrar Experiencia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="MyModal">
+                <p style="color: rgb(255, 255, 255)">
+                    Estás seguro que quieres Eliminar
+                    {{ deleteSkillsfront?.tituloSkillF }}?
+                </p>
+                <div class="modal-footer">
+                    <button type="button" id="1" class="btn btn-secondary" data-bs-dismiss="modal">No Eliminar</button>
+
+                    <button (click)="onDeleteSkillsfront(deleteSkillsfront!.idSkillF)" data-bs-dismiss="modal"
+                        class="btn btn-primary">Eliminar</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

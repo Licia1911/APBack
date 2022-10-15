@@ -10,7 +10,7 @@ i{
 }
 
 #borrar{
-    margin-left: 260px;
+    margin-left: 240px;
 
 }
 
@@ -21,6 +21,44 @@ i{
 
 .progress-bar{
     background-color: #f033b1;
+}
+
+.btn{
+    border-color: #f033b1;
+    margin-left: 18px;
+    color: #f033b1;
+    background: transparent;
+}
+
+#agregar{
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+
+#btnEdit{
+    background: transparent;
+    border: none;
+}
+
+#btnDelete{
+    background: transparent;
+    border: none;
+}
+
+#MyModal{
+    background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200);
+}
+
+.btn-close{
+    background-color: #f033b1 !important;
+}
+
+input, textarea {
+    background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200) !important;
 }
 
 @media screen and (max-width: 650px){
