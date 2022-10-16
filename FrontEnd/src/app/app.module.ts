@@ -15,6 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { SkillsFComponent } from './components/skills/skills-f/skills-f.component';
 import { SkillsBComponent } from './components/skills/skills-b/skills-b.component';
 import { SkillsSComponent } from './components/skills/skills-s/skills-s.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+
 
 
 @NgModule({
@@ -30,13 +33,16 @@ import { SkillsSComponent } from './components/skills/skills-s/skills-s.componen
     FooterComponent,
     SkillsFComponent,
     SkillsBComponent,
-    SkillsSComponent
+    SkillsSComponent,
+    HomeComponent,
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
