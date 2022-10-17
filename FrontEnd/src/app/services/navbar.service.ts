@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { Persona } from '../models/persona';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavbarService {
-  private apiServerUrl=environment.apiBaseUrl;
+  private apiServerUrl= 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -19,5 +18,6 @@ export class NavbarService {
   public updatePersona(persona: Persona):Observable<Persona>{
     return this.http.put<Persona>(`${this.apiServerUrl}/api/persona`, persona);
   }
+  
   
 }

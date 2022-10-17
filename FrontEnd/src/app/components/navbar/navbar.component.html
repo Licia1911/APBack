@@ -9,45 +9,52 @@
 
             <!-- Menus List -->
             <div class="offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel"  *ngIf="persona">
+                aria-labelledby="offcanvasNavbarLabel" *ngIf="persona">
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav"><button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editPersonaModal"
-                        (click)="onOpenModal('edit', persona)"><i class="bi bi-pencil-square"
-                            style="font-size: 1rem;"></i></button>
+                    <ul class="navbar-nav"><button id="btnEdit" type="button" data-bs-toggle="modal"
+                            data-bs-target="#editPersonaModal" (click)="onOpenModal('edit', persona)"><i
+                                class="bi bi-pencil-square" style="font-size: 1rem;"></i></button>
 
-                        <img id="fotoPerfil" src={{persona.fotoPerfil}}  alt="">
+                        <img id="fotoPerfil" src={{persona.fotoPerfil}} alt="">
                         <h3>{{persona.nombre}}</h3>
 
-                        <li><a href={{persona.github}} target="_blank"><i class="bi bi-github"></i> <span class="item-text">Github</span></a></li>
+                        <li><a href={{persona.github}} target="_blank"><i class="bi bi-github"></i> <span
+                                    class="item-text">Github</span></a></li>
 
                         <li><a href={{persona.linkedIn}} target="_blank"><i class="bi bi-linkedin"></i> <span
-                        class="item-text">Linkedin</span></a></li>
-                        
+                                    class="item-text">Linkedin</span></a></li>
+
                         <li><a href="#"><i class="bi bi-house-heart"></i> <span class="item-text">Inicio</span></a></li>
-                        
-                        <li><a href="#sobre"><i class="bi bi-person-heart"></i> <span class="item-text">Acerca de mí</span></a></li>
-                        
-                        <li><a href="#sobreSkills"><i class="bi bi-person-check-fill"></i> <span class="item-text">Skills</span></a>
+
+                        <li><a href="#sobre"><i class="bi bi-person-heart"></i> <span class="item-text">Acerca de
+                                    mí</span></a></li>
+
+                        <li><a href="#sobreSkills"><i class="bi bi-person-check-fill"></i> <span
+                                    class="item-text">Skills</span></a>
                         </li>
-                        
-                        <li><a href="#sobreProy"><i class="bi bi-file-code-fill"></i> <span class="item-text">Proyectos</span></a></li>
+
+                        <li><a href="#sobreProy"><i class="bi bi-file-code-fill"></i> <span
+                                    class="item-text">Proyectos</span></a></li>
                         <img id="logo" src="../../../assets/APLogo.png" alt="">
                     </ul>
                 </div>
             </div>
             <div>
-                <button type="button" class="btn btn-outline-secondary" ><i class="bi bi-person-circle"></i>Ingresar</button>
+                <button type="button" class="btn btn-outline-secondary"><i
+                        class="bi bi-person-circle"></i>Ingresar</button>
 
-                <button type="button" class="btn btn-outline-secondary"><i class="bi bi-person-circle"></i>Cerrar Sesion</button>
+                <button type="button" class="btn btn-outline-secondary"><i class="bi bi-person-circle"></i>Cerrar
+                    Sesion</button>
             </div>
         </div>
     </nav>
 </div>
 
+
+
 <!-- Modal Editar Persona -->
 
-<div class="modal fade" id="editPersonaModal" tabindex="-1" aria-labelledby="editPersonaModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="editPersonaModal" tabindex="-1" aria-labelledby="editPersonaModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" id="MyModal">
@@ -57,8 +64,8 @@
             <div class="modal-body" id="MyModal">
                 <form #editForm="ngForm">
 
-                    <input type="hidden" ngModel="{{ editPersona?.id }}" name="id" class="form-control"
-                    id="id1" placeholder="" />
+                    <input type="hidden" ngModel="{{ editPersona?.id }}" name="id" class="form-control" id="id1"
+                        placeholder="" />
 
                     <div class="mb-3">
                         <label for="fotoPerfil" class="col-form-label">Foto de Perfil</label>
@@ -87,8 +94,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="descripcion" class="col-form-label">Descripción:</label>
-                        <textarea  type="text" name="descripcion" ngModel="{{ editPersona?.descripcion}}" class="form-control"
-                            id="descripcion1" placeholder=""></textarea>
+                        <textarea type="text" name="descripcion" ngModel="{{ editPersona?.descripcion}}"
+                            class="form-control" id="descripcion1" placeholder=""></textarea>
                     </div>
                     <div class="modal-footer" id="MyModal">
                         <button type="button" id="1" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

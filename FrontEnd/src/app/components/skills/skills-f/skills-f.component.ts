@@ -11,11 +11,11 @@ import { SkillsfService } from 'src/app/services/skillsf.service';
 })
 export class SkillsFComponent implements OnInit {
   public skillsfront:SkillsF[]=[];
-  public skillsfront2 = this.skillsfService.getSkillsF;
   public editSkillsfront: SkillsF | undefined;
   public deleteSkillsfront: SkillsF | undefined;
 
   constructor(private skillsfService:SkillsfService) { }
+
 
   ngOnInit(): void {
     this.getSkillsfront();

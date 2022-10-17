@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SkillsB } from 'src/app/models/skillsb';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 import { SkillsbService } from 'src/app/services/skillsb.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class SkillsBComponent implements OnInit {
   public deleteskillsback: SkillsB | undefined;
 
   constructor(private skillsbService:SkillsbService) { }
-
+  
   ngOnInit(): void {
     this.getSkillsback();
   }

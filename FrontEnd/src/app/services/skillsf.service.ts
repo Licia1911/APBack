@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { SkillsF } from '../models/skillsf';
 
 
@@ -9,7 +8,7 @@ import { SkillsF } from '../models/skillsf';
   providedIn: 'root'
 })
 export class SkillsfService {
-  private apiServerUrl=environment.apiBaseUrl;
+  private apiServerUrl= 'http://localhost:8080';
 
   constructor(private http:HttpClient) { }
 

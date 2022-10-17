@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SkillsS } from 'src/app/models/skillss';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 import { SkillssService } from 'src/app/services/skillss.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class SkillsSComponent implements OnInit {
 
   constructor(private skillssService:SkillssService) { }
 
+  
   ngOnInit(): void {
     this.getSkillssoft();
   }

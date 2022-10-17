@@ -6,10 +6,9 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  url = '*';
+  url = 'http://localhost:8080';
   currentUserSubject: BehaviorSubject<any>;
-  parcero: boolean | undefined; 
-
+  parcero: boolean | undefined;
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<any>(
       JSON.parse(sessionStorage.getItem('currentUser') || '{}')
@@ -36,7 +35,6 @@ export class AutenticacionService {
   loggedIn() {
     return this.parcero;
   }
-
   logoutUser() {
     this.parcero = false;
     sessionStorage.clear();
@@ -46,5 +44,4 @@ export class AutenticacionService {
     alert('LOGOUT!');
   }
 
-  
 }

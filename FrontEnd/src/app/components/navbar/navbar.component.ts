@@ -8,16 +8,23 @@ import { NavbarService } from 'src/app/services/navbar.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
+
 
   public persona: Persona | undefined;
   public editPersona: Persona | undefined;
 
-  constructor(private navbarService: NavbarService) { }
+  constructor(private navbarService: NavbarService) { 
 
+    }
+    
+  
   ngOnInit(): void {
     this.getUser();
   }
+
+
 
   public getUser():void{
     this.navbarService.getUser().subscribe({

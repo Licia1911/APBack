@@ -12,9 +12,11 @@ export class BannerComponent implements OnInit {
 
   public persona: Persona | undefined;
   public editPersona: Persona | undefined;
+  autenticacionService: any;
 
   constructor(private bannerService: BannerService) { }
 
+  
   ngOnInit(): void {
     this.getUser();
   }

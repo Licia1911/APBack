@@ -14,6 +14,7 @@ export class AcercaComponent implements OnInit {
 
   constructor(private acercaService: AcercaService) { }
 
+
   ngOnInit(): void {
     this.getUser();
   }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -11,12 +11,22 @@ import { ExperienciaComponent } from './components/acerca/experiencia/experienci
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SkillsFComponent } from './components/skills/skills-f/skills-f.component';
 import { SkillsBComponent } from './components/skills/skills-b/skills-b.component';
 import { SkillsSComponent } from './components/skills/skills-s/skills-s.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { InterceptorService } from './services/interceptor.service';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { AcercaService } from './services/acerca.service';
+import { AutenticacionService } from './services/autenticacion.service';
+import { BannerService } from './services/banner.service';
+import { EducacionService } from './services/educacion.service';
+import { ExperienciaService } from './services/experiencia.service';
+import { NavbarService } from './services/navbar.service';
+import { ProyectosService } from './services/proyectos.service';
+import { SkillsbService } from './services/skillsb.service';
+import { SkillsfService } from './services/skillsf.service';
+import { SkillssService } from './services/skillss.service';
 
 
 
@@ -34,8 +44,7 @@ import { LoginComponent } from './components/login/login.component';
     SkillsFComponent,
     SkillsBComponent,
     SkillsSComponent,
-    HomeComponent,
-    LoginComponent,
+    PortfolioComponent,
 
   ],
   imports: [
@@ -43,8 +52,22 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    AcercaService,
+    AutenticacionService,
+    BannerService,
+    EducacionService,
+    ExperienciaService,
+    NavbarService,
+    ProyectosService,
+    SkillsbService,
+    SkillsfService,
+    SkillssService,
+    InterceptorService,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

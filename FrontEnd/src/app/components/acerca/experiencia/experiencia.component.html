@@ -1,17 +1,20 @@
-<button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addExperienciaModal"
-    (click)="onOpenModal('add')">Agregar exp. laboral<span class="sr-only">(current)</span></button>
-
+<div>
+    <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addExperienciaModal"
+        (click)="onOpenModal('add')">Agregar exp. laboral<span class="sr-only">(current)</span></button>
+</div>
 <div class="exp" *ngFor="let experiencia of experiencias">
     <div class="card bg-transparent mb-3" style="max-width: 15rem;">
         <div class="card-header">
-            <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editExperienciaModal"
-                (click)="onOpenModal('edit', experiencia)"><i class="bi bi-pencil-square"
-                    style="font-size: 1rem;"></i></button>
+            <div>
 
-            <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteExperienciaModal"
-                (click)="onOpenModal('delete', experiencia)"><i class="bi bi-trash" style="font-size: 1rem;"
-                    id="borrar"></i></button>
+                <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editExperienciaModal"
+                    (click)="onOpenModal('edit', experiencia)"><i class="bi bi-pencil-square"
+                        style="font-size: 1rem;"></i></button>
 
+                <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteExperienciaModal"
+                    (click)="onOpenModal('delete', experiencia)"><i class="bi bi-trash" style="font-size: 1rem;"
+                        id="borrar"></i></button>
+            </div>
             <h4>{{experiencia.tituloExp}}</h4>
         </div>
         <div class="card-body">
@@ -80,14 +83,14 @@
                         id="idExp1" placeholder="" />
                     <div class="mb-3">
                         <label for="fechaExp" class="col-form-label">Fecha inicio-fin:</label>
-                        <input type="text" name="fechaExp" ngModel="{{editExperiencia?.fechaExp}}"
-                            class="form-control" id="fechaExp1" data-bs-whatever="@getbootstrap" placeholder="" />
+                        <input type="text" name="fechaExp" ngModel="{{editExperiencia?.fechaExp}}" class="form-control"
+                            id="fechaExp1" data-bs-whatever="@getbootstrap" placeholder="" />
                     </div>
 
                     <div class="mb-3">
                         <label for="descExp" class="col-form-label">Descripción:</label>
-                        <textarea type="text" name="descExp" ngModel="{{ editExperiencia?.descExp}}" class="form-control"
-                            id="descExp1" placeholder=""></textarea>
+                        <textarea type="text" name="descExp" ngModel="{{ editExperiencia?.descExp}}"
+                            class="form-control" id="descExp1" placeholder=""></textarea>
                     </div>
                     <div class="modal-footer" id="MyModal">
                         <button type="button" id="1" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

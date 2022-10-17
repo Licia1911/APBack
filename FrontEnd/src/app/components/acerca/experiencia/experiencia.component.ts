@@ -11,7 +11,6 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 })
 export class ExperienciaComponent implements OnInit {
   public experiencias: Experiencia[]=[];
-  public experiencias2 = this.experienciaService.getExperiencia;
   public editExperiencia: Experiencia | undefined;
   public deleteExperiencia: Experiencia | undefined;
 

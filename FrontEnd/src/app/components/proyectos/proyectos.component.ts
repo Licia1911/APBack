@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Proyectos } from 'src/app/models/proyectos';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 import { ProyectosService } from 'src/app/services/proyectos.service';
 
 @Component({
@@ -12,12 +13,12 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
 export class ProyectosComponent implements OnInit {
 
   public proyectoss: Proyectos[]=[];
-  public proyectoss2 = this.proyectosService.getProyectos;
   public editProyecto: Proyectos | undefined;
   public deleteProyecto: Proyectos | undefined;
 
   constructor(private proyectosService: ProyectosService) { }
 
+  
   ngOnInit(): void {
     this.getProyecto();
   }
