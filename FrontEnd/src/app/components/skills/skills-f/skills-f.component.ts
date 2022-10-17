@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SkillsF } from 'src/app/models/skillsf';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 import { SkillsfService } from 'src/app/services/skillsf.service';
 
 @Component({
@@ -14,9 +15,9 @@ export class SkillsFComponent implements OnInit {
   public editSkillsfront: SkillsF | undefined;
   public deleteSkillsfront: SkillsF | undefined;
 
-  constructor(private skillsfService:SkillsfService) { }
+  constructor(private skillsfService:SkillsfService, public autenticacionService: AutenticacionService) { }
 
-
+  isloged = () => this.autenticacionService.loggedIn();
   ngOnInit(): void {
     this.getSkillsfront();
   }

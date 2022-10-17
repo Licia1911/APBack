@@ -1,12 +1,13 @@
-<div>
+<div *ngIf="isloged()">
     <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addExperienciaModal"
         (click)="onOpenModal('add')">Agregar exp. laboral<span class="sr-only">(current)</span></button>
 </div>
+
 <div class="exp" *ngFor="let experiencia of experiencias">
     <div class="card bg-transparent mb-3" style="max-width: 15rem;">
         <div class="card-header">
-            <div>
 
+            <div *ngIf="isloged()">
                 <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editExperienciaModal"
                     (click)="onOpenModal('edit', experiencia)"><i class="bi bi-pencil-square"
                         style="font-size: 1rem;"></i></button>
@@ -15,8 +16,10 @@
                     (click)="onOpenModal('delete', experiencia)"><i class="bi bi-trash" style="font-size: 1rem;"
                         id="borrar"></i></button>
             </div>
+
             <h4>{{experiencia.tituloExp}}</h4>
         </div>
+        
         <div class="card-body">
             <h5 class="card-title">{{experiencia.fechaExp}}</h5>
             <p class="card-text">{{experiencia.descExp}}</p>

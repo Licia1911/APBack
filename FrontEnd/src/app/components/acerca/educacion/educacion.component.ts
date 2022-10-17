@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Educacion } from 'src/app/models/educacion';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 import { EducacionService } from 'src/app/services/educacion.service';
 
 @Component({
@@ -12,13 +13,13 @@ import { EducacionService } from 'src/app/services/educacion.service';
 export class EducacionComponent implements OnInit {
 
   public educations: Educacion[] = [];
-  public educations2 = this.educacionService.getEducation();
   public editEducation: Educacion | undefined;
   public deleteEducation: Educacion | undefined;
 
-  constructor(private educacionService: EducacionService) { }
+  constructor(private educacionService: EducacionService,
+    public autenticacionService: AutenticacionService) { }
 
-  
+    isloged = () => this.autenticacionService.loggedIn();
   ngOnInit(): void {
     this.getEducation();
   }

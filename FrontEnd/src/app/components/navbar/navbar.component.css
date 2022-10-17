@@ -83,7 +83,7 @@ input, textarea{
     color: rgb(196, 200, 200) !important;
 }
 
-.btn-secondary, .btn-primary{
+.btn{
     border-color: #f033b1;
     margin-left: 18px;
     color: #f033b1;
@@ -92,4 +92,10 @@ input, textarea{
 
 .btn-close{
     background-color: #f033b1 !important;
+}
+
+#myModal{
+        background-color: rgb(43, 43, 43) !important;
+    border-color: #f033b1;
+    color: rgb(196, 200, 200);
 }

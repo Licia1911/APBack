@@ -28,15 +28,21 @@ i{
 }
 
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 400px){
     #sobreSkills{
-        margin-left: 20px;
+        margin-left: 0px;
     }
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 400px){
     #back, #soft{
         margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    #sobreSkills{
+        margin-left: 0px;
     }
 }
 

@@ -13,12 +13,12 @@ import { SkillsbService } from 'src/app/services/skillsb.service';
 export class SkillsBComponent implements OnInit {
 
   public skillsback:SkillsB[]=[];
-  public skillsback2 = this.skillsbService.getSkillsB;
   public editskillsback: SkillsB | undefined;
   public deleteskillsback: SkillsB | undefined;
 
-  constructor(private skillsbService:SkillsbService) { }
+  constructor(private skillsbService:SkillsbService, public autenticacionService: AutenticacionService) { }
   
+  isloged = () => this.autenticacionService.loggedIn();
   ngOnInit(): void {
     this.getSkillsback();
   }

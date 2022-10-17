@@ -16,8 +16,9 @@ export class ProyectosComponent implements OnInit {
   public editProyecto: Proyectos | undefined;
   public deleteProyecto: Proyectos | undefined;
 
-  constructor(private proyectosService: ProyectosService) { }
+  constructor(private proyectosService: ProyectosService, public autenticacionService: AutenticacionService) { }
 
+  isloged = () => this.autenticacionService.loggedIn();
   
   ngOnInit(): void {
     this.getProyecto();

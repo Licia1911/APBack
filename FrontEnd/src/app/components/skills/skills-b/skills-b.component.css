@@ -9,10 +9,6 @@ i{
     margin-bottom: 20px;
 }
 
-#borrar{
-    margin-left: 240px;
-
-}
 
 #itec{
     color:  rgb(196, 200, 200);
@@ -41,6 +37,7 @@ i{
 }
 
 #btnDelete{
+    margin-left: 240px;
     background: transparent;
     border: none;
 }
@@ -61,8 +58,44 @@ input, textarea {
     color: rgb(196, 200, 200) !important;
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 400px){
     .tec{
         margin-left: 80px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #agregar{
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #btnDelete{
+        margin-left: 120px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    #agregar{
+        margin-left: 130px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    #btnDelete{
+        margin-left: 200px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    .progress{
+        margin-left: 10px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    #itec{
+        margin-left: 10px;
     }
 }

@@ -1,5 +1,5 @@
-<div>
-<button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addEducationModal"
+<div *ngIf="isloged()">
+    <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addEducationModal"
     (click)="onOpenModal('add')">Agregar educación<span class="sr-only">(current)</span></button>
 </div>
 
@@ -7,16 +7,16 @@
     <div class="card bg-transparent mb-3" style="max-width: 15rem;">
         <div class="card-header">
 
-            <div>
-            
+            <div *ngIf="isloged()">
                 <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editEducationModal"
                 (click)="onOpenModal('edit', educacion)"><i class="bi bi-pencil-square"
                     style="font-size: 1rem;"></i></button>
 
-            <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteEducationModal"
+                <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteEducationModal"
                 (click)="onOpenModal('delete', educacion)"><i class="bi bi-trash" style="font-size: 1rem;"
                     id="borrar"></i></button>
             </div>
+            
             <h4>{{educacion.tituloEdu}}:</h4>
 
         </div>

@@ -11,9 +11,12 @@
             <div class="offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel" *ngIf="persona">
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav"><button id="btnEdit" type="button" data-bs-toggle="modal"
-                            data-bs-target="#editPersonaModal" (click)="onOpenModal('edit', persona)"><i
-                                class="bi bi-pencil-square" style="font-size: 1rem;"></i></button>
+                    <ul class="navbar-nav">
+                        <div *ngIf="isloged()">
+                            <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editPersonaModal"
+                                (click)="onOpenModal('edit', persona)"><i class="bi bi-pencil-square"
+                                    style="font-size: 1rem;"></i></button>
+                        </div>
 
                         <img id="fotoPerfil" src={{persona.fotoPerfil}} alt="">
                         <h3>{{persona.nombre}}</h3>
@@ -39,17 +42,67 @@
                     </ul>
                 </div>
             </div>
-            <div>
-                <button type="button" class="btn btn-outline-secondary"><i
-                        class="bi bi-person-circle"></i>Ingresar</button>
-
-                <button type="button" class="btn btn-outline-secondary"><i class="bi bi-person-circle"></i>Cerrar
-                    Sesion</button>
+            <div *ngIf="!isloged()" class="nav-item">
+                <a data-bs-toggle="modal" data-bs-target="#myModal" class="nav-link active" class="btn tooltips"
+                    data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i
+                        class="fa-solid fa-user"></i>
+                </a>
+            </div>
+            <div *ngIf="isloged()" class="nav-item">
+                <a (click)="handleClear()" (click)="autenticacionService.logoutUser()" class="nav-link active"
+                    class="btn tooltips"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>
         </div>
     </nav>
 </div>
 
+<!-- Login modal-->
+<div class="modal fade bd-example-modal-lg" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 20px">
+            <div class="modal-header" id="myModal">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="myModal">
+                <form [formGroup]="form" class="m-5" (ngSubmit)="onEnviar($event)">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input formControlName="email" [ngClass]="{
+                    'is-invalid': Email?.errors && Email?.touched,
+                    'is-valid': !Email?.errors && Email?.touched
+                }" type="email" class="form-control" id="exampleFormControlInput1" placeholder="email"
+                            autocomplete="off" required />
+                        <div *ngIf="Email?.errors && Email?.touched">
+                            <p *ngIf="Email?.hasError('required')" class="text-danger">
+                                El email es requerido
+                            </p>
+                            <p *ngIf="Email?.hasError('email')" class="text-danger">
+                                El formato del email debe ser valido
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <input [ngClass]="{
+                    'is-invalid': Password?.errors && Password?.touched,
+                    'is-valid': !Password?.errors && Password?.touched
+                }" formControlName="password" type="password" class="form-control" id="exampleInputPassword1"
+                            placeholder="password" autocomplete="off" required />
+                        <div *ngIf="Password?.errors && Password?.touched">
+                            <p *ngIf="Password?.hasError('required')" style="color: black" class="text-danger">
+                                El password es requerido
+                            </p>
+                        </div>
+                    </div>
+                    <button id="btnCerrar" type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Modal Editar Persona -->
@@ -58,7 +111,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" id="MyModal">
-                <h5 class="modal-title" id="editPersonaModalLabel">Editar Persona</h5>
+                <h5 class="modal-title" id="editPersonaModal">Editar Persona</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="MyModal">

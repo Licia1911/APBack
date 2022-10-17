@@ -1,19 +1,22 @@
 <div class="row">
-    <div id="sobreProy" class="col-xs-11 col-md-10 col-lg-10">
-        <h1><i class="bi bi-file-code-fill"></i>Proyectos</h1>
+    <h1 style="text-align:center"><i class="bi bi-file-code-fill"></i>Proyectos</h1>
+
+    <div id="sobreProy" class="col-xs-10 col-md-10 col-lg-10" *ngIf="isloged()">
         <button id="agregar" type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addProyectosModal"
     (click)="onOpenModal('add')">Agregar Proyecto<span class="sr-only">(current)</span></button>
 
     </div>
         <div id="proyInfo" class="col-xs-10 col-md-4 col-lg-4" *ngFor="let proyectos of proyectoss">
+
+            <div *ngIf="isloged()">
             <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editProyectosModal"
                 (click)="onOpenModal('edit', proyectos)"><i class="bi bi-pencil-square"
                     style="font-size: 1rem;"></i></button>
 
             <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteProyectosModal"
                 (click)="onOpenModal('delete', proyectos)"><i class="bi bi-trash" style="font-size: 1rem;"></i></button>
-
-            <div class="card bg-transparent mb-3" style="width: 20rem;">
+            </div>    
+            <div class="card bg-transparent mb-3" style="width: 20rem;" id="card">
                 <img src={{proyectos.imgPro}} class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{proyectos.tituloPro}}</h5>
