@@ -27,6 +27,9 @@ import { SkillsbService } from './services/skillsb.service';
 import { SkillsfService } from './services/skillsf.service';
 import { SkillssService } from './services/skillss.service';
 import { BannerService } from './services/banner.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 
@@ -53,6 +56,8 @@ import { BannerService } from './services/banner.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    DragDropModule,
   ],
   providers: [
     AcercaService,

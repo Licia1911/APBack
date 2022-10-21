@@ -1,29 +1,40 @@
 <div *ngIf="isloged()">
     <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addEducationModal"
-    (click)="onOpenModal('add')">Agregar educación<span class="sr-only">(current)</span></button>
+        (click)="onOpenModal('add')">Agregar educación<span class="sr-only">(current)</span></button>
 </div>
 
-<div class="edu" *ngFor="let educacion of educations">
-    <div class="card bg-transparent mb-3" style="max-width: 15rem;">
-        <div class="card-header">
+<div id="even" cdkDropList [cdkDropListData]="educations" cdkDropListConnectedTo="even"
+    (cdkDropListDropped)="onDrop($event)" #educationList="cdkDropList" class="row mt-2">
+    
+    
+    <div
+    div class="edu"
+    *ngFor="let education of educations"
+    cdkDrag
+    [cdkDragData]="education"
+    cdkDragPreviewContainer="parent">
 
-            <div *ngIf="isloged()">
-                <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editEducationModal"
-                (click)="onOpenModal('edit', educacion)"><i class="bi bi-pencil-square"
-                    style="font-size: 1rem;"></i></button>
+        <div class="card bg-transparent mb-3" style="max-width: 15rem;">
+            <div class="card-header">
 
-                <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteEducationModal"
-                (click)="onOpenModal('delete', educacion)"><i class="bi bi-trash" style="font-size: 1rem;"
-                    id="borrar"></i></button>
+                <div *ngIf="isloged()">
+                    <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editEducationModal"
+                        (click)="onOpenModal('edit', education)"><i class="bi bi-pencil-square"
+                            style="font-size: 1rem;"></i></button>
+
+                    <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteEducationModal"
+                        (click)="onOpenModal('delete', education)"><i class="bi bi-trash" style="font-size: 1rem;"
+                            id="borrar"></i></button>
+                </div>
+
+                <h4>{{education.tituloEdu}}:</h4>
+
             </div>
-            
-            <h4>{{educacion.tituloEdu}}:</h4>
+            <div class="card-body">
 
-        </div>
-        <div class="card-body">
+                <p class="card-text">{{education.descEdu}}</p>
 
-            <p class="card-text">{{educacion.descEdu}}</p>
-
+            </div>
         </div>
     </div>
 </div>
@@ -47,8 +58,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="descEdu" class="col-form-label">Descripción:</label>
-                        <textarea  type="text" name="descEdu" ngModel class="form-control" id="descEdu"
-                            placeholder="Curso de Javascript" required ></textarea>
+                        <textarea type="text" name="descEdu" ngModel class="form-control" id="descEdu"
+                            placeholder="Curso de Javascript" required></textarea>
                     </div>
                     <div class="modal-footer" id="MyModal">
                         <button type="button" id="add-education-form" class="btn btn-secondary"
@@ -83,7 +94,7 @@
 
                     <div class="mb-3">
                         <label for="descEdu" class="col-form-label">Descripción:</label>
-                        <textarea  type="text" name="descEdu" ngModel="{{ editEducation?.descEdu}}" class="form-control"
+                        <textarea type="text" name="descEdu" ngModel="{{ editEducation?.descEdu}}" class="form-control"
                             id="descEdu1" placeholder=""></textarea>
                     </div>
                     <div class="modal-footer" id="MyModal">
