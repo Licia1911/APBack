@@ -19,5 +19,4 @@ export class NavbarService {
     return this.http.put<Persona>(`${this.apiServerUrl}/api/persona`, persona);
   }
   
-  
 }

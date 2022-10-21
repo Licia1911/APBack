@@ -20,10 +20,13 @@ public class Persona implements Serializable {
     private String descripcion;
     @Column(name = "foto_perfil", length = 1000, nullable = false)
     private String fotoPerfil;
+    @Column(name = "banner", length = 1000, nullable = false)
+    private String banner;
     @Column(name = "github", length = 500, nullable = false)
     private String github;
     @Column(name = "linked_in ", length = 500, nullable = false)
     private String linkedIn;
+
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy="idEdu")
     private List<Educacion>educacionList;
@@ -46,12 +49,13 @@ public class Persona implements Serializable {
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String titulo, String descripcion, String fotoPerfil, String github, String linkedIn) {
+    public Persona(Long id, String nombre, String titulo, String descripcion, String fotoPerfil, String banner, String github, String linkedIn) {
         this.id = id;
         this.nombre = nombre;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fotoPerfil = fotoPerfil;
+        this.banner = banner;
         this.github = github;
         this.linkedIn = linkedIn;
     }
@@ -94,6 +98,14 @@ public class Persona implements Serializable {
 
     public void setFotoPerfil(String fotoPerfil) {
         this.fotoPerfil = fotoPerfil;
+    }
+
+    public String getBanner() {
+        return banner;
+    }
+
+    public void setBanner(String banner) {
+        this.banner = banner;
     }
 
     public String getGithub() {

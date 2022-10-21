@@ -19,7 +19,6 @@ import { InterceptorService } from './services/interceptor.service';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AcercaService } from './services/acerca.service';
 import { AutenticacionService } from './services/autenticacion.service';
-import { BannerService } from './services/banner.service';
 import { EducacionService } from './services/educacion.service';
 import { ExperienciaService } from './services/experiencia.service';
 import { NavbarService } from './services/navbar.service';
@@ -27,6 +26,7 @@ import { ProyectosService } from './services/proyectos.service';
 import { SkillsbService } from './services/skillsb.service';
 import { SkillsfService } from './services/skillsf.service';
 import { SkillssService } from './services/skillss.service';
+import { BannerService } from './services/banner.service';
 
 
 
