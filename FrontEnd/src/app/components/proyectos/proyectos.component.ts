@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -13,6 +14,7 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
 export class ProyectosComponent implements OnInit {
 
   public proyectoss: Proyectos[]=[];
+  public proyectoss2 = this.proyectosService.getProyectos();
   public editProyecto: Proyectos | undefined;
   public deleteProyecto: Proyectos | undefined;
 
@@ -92,6 +94,25 @@ export class ProyectosComponent implements OnInit {
         alert(error.message);
       },
     });
+  }
+
+  onDrop(event: CdkDragDrop<Proyectos[]>) {
+    if (this.autenticacionService.loggedIn()) {
+      if (event.previousContainer === event.container) {
+        moveItemInArray(
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+      } else {
+        transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+      }
+    }
   }
 
 }

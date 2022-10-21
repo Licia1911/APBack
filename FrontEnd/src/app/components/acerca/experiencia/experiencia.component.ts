@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -12,6 +13,7 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 })
 export class ExperienciaComponent implements OnInit {
   public experiencias: Experiencia[]=[];
+  public experiencias2 = this.experienciaService.getExperiencia();
   public editExperiencia: Experiencia | undefined;
   public deleteExperiencia: Experiencia | undefined;
 
@@ -90,6 +92,25 @@ export class ExperienciaComponent implements OnInit {
         alert(error.message);
       },
     });
+  }
+
+  onDrop(event: CdkDragDrop<Experiencia[]>) {
+    if (this.autenticacionService.loggedIn()) {
+      if (event.previousContainer === event.container) {
+        moveItemInArray(
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+      } else {
+        transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+      }
+    }
   }
 
 }
