@@ -50,3 +50,15 @@ i{
     border-color: #f033b1;
     color: rgb(196, 200, 200);
 }
+
+@media screen and (max-width: 400px){
+    .card{
+        margin-left: -20px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .btn{
+        margin-left: 0px;
+    }
+}

@@ -3,21 +3,27 @@
         (click)="onOpenModal('add')">Agregar Skill<span class="sr-only">(current)</span></button>
 </div>
 
-<div class="soft" *ngFor="let skillsS of skillssoft">
-    <div class="tec">
-        <div *ngIf="isloged()">
-            <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editSkillsSModal"
-                (click)="onOpenModal('edit', skillsS)"><i class="bi bi-pencil-square"
-                    style="font-size: 1rem;"></i></button>
+<div id="even" cdkDropList [cdkDropListData]="skillssoft" cdkDropListConnectedTo="even"
+    (cdkDropListDropped)="onDrop($event)" #skillssoft2List="cdkDropList">
 
-            <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteSkillsSModal"
-                (click)="onOpenModal('delete', skillsS)"><i class="bi bi-trash" style="font-size: 1rem;"
-                    id="borrar"></i></button>
-        </div>
-        <h5><i id="itec" class={{skillsS.iconoSkillS}}></i>{{skillsS.tituloSkillS}}</h5>
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0"
-                aria-valuemax="100">{{skillsS.progSkillS}}%</div>
+    <div class="soft" *ngFor="let skillsS of skillssoft" cdkDrag [cdkDragData]="skillsS"
+        cdkDragPreviewContainer="parent">
+        
+        <div class="tec">
+            <div *ngIf="isloged()">
+                <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editSkillsSModal"
+                    (click)="onOpenModal('edit', skillsS)"><i class="bi bi-pencil-square"
+                        style="font-size: 1rem;"></i></button>
+
+                <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteSkillsSModal"
+                    (click)="onOpenModal('delete', skillsS)"><i class="bi bi-trash" style="font-size: 1rem;"
+                        id="borrar"></i></button>
+            </div>
+            <h5><i id="itec" class={{skillsS.iconoSkillS}}></i>{{skillsS.tituloSkillS}}</h5>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0"
+                    aria-valuemax="100">{{skillsS.progSkillS}}%</div>
+            </div>
         </div>
     </div>
 </div>

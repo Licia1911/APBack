@@ -18,11 +18,12 @@
     position: relative;
     z-index: 2; 
     color: rgb(196, 200, 200);
-    text-shadow: 8px 8px 8px rgb(38, 37, 37);
+    text-shadow: 10px 10px 10px black;
     font-family: 'Pacifico', cursive;
 }
 
 p{
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-top: 10px;
+    margin-left: 25px;
+    text-shadow: 10px 10px 10px 10px black;
 }

@@ -36,22 +36,51 @@ h5, h6{
     margin-top: 15px;
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 400px){
     .row{
         border: none;
     }
 }
 
+@media screen and (max-width: 400px){
+    #nombre{
+        margin-left: 20px;
+    }
+}
 
+@media screen and (max-width: 400px){
 
-@media screen and (max-width: 650px){
     #logo{
         margin-left: 200px;
     }
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 400px){
     #prog{
         margin-left: 250px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    .row{
+        border: none;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    #nombre{
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    #logo{
+        margin-left: 220px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    #prog{
+        margin-left: 280px;
     }
 }

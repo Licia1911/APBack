@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -12,6 +13,7 @@ import { SkillssService } from 'src/app/services/skillss.service';
 })
 export class SkillsSComponent implements OnInit {
   public skillssoft:SkillsS[]=[];
+  public skillssoft2 = this.skillssService.getSkillsS();
   public editskillssoft: SkillsS | undefined;
   public deleteskillssoft: SkillsS | undefined;
 
@@ -90,6 +92,25 @@ export class SkillsSComponent implements OnInit {
         alert(error.message);
       },
     });
+  }
+  
+  onDrop(event: CdkDragDrop<SkillsS[]>) {
+    if (this.autenticacionService.loggedIn()) {
+      if (event.previousContainer === event.container) {
+        moveItemInArray(
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+      } else {
+        transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+      }
+    }
   }
 
 }

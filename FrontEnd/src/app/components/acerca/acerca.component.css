@@ -42,7 +42,7 @@ img{
     margin-left: 80px;
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 400px){
     #sobre{
         margin-left: 40px;
         margin-right: 20px;
@@ -53,13 +53,39 @@ img{
     }
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 400px){
     img{
         margin-bottom: 60px;
     }
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width:400px){
+    #edu, #exp{
+        margin-left: 80PX;
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width:400px){
+    h3{
+        margin-left: -20px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    #sobre{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
+    img{
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 750px){
     #edu, #exp{
         margin-left: 80PX;
         margin-bottom: 60px;

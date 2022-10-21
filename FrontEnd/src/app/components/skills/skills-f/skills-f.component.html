@@ -2,23 +2,27 @@
     <button id="agregar" type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#addSkillsFModal"
         (click)="onOpenModal('add')">Agregar Skill<span class="sr-only">(current)</span></button>
 </div>
+<div id="even" cdkDropList [cdkDropListData]="skillsfront" cdkDropListConnectedTo="even"
+    (cdkDropListDropped)="onDrop($event)" #skillsbackList="cdkDropList">
 
-<div class="front" *ngFor="let skillsF of skillsfront">
-    <div class="tec">
+    <div class="back" *ngFor="let skillsF of skillsfront" cdkDrag [cdkDragData]="skillsF"
+        cdkDragPreviewContainer="parent">
 
-        <div *ngIf="isloged()">
-            <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editSkillsFModal"
-                (click)="onOpenModal('edit', skillsF)"><i class="bi bi-pencil-square"
-                    style="font-size: 1rem;"></i></button>
+        <div class="tec">
+            <div *ngIf="isloged()">
+                <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editSkillsFModal"
+                    (click)="onOpenModal('edit', skillsF)"><i class="bi bi-pencil-square"
+                        style="font-size: 1rem;"></i></button>
 
-            <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteSkillsFModal"
-                (click)="onOpenModal('delete', skillsF)"><i class="bi bi-trash" style="font-size: 1rem;"
-                    id="borrar"></i></button>
-        </div>
-        <h5><i id="itec" class={{skillsF.iconoSkillF}}></i>{{skillsF.tituloSkillF}}</h5>
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="" aria-valuemin="0"
-                aria-valuemax="100">{{skillsF.progSkillF}}%</div>
+                <button id="btnDelete" type="button" data-bs-toggle="modal" data-bs-target="#deleteSkillsFModal"
+                    (click)="onOpenModal('delete', skillsF)"><i class="bi bi-trash" style="font-size: 1rem;"
+                        id="borrar"></i></button>
+            </div>
+            <h5><i id="itec" class={{skillsF.iconoSkillF}}></i>{{skillsF.tituloSkillF}}</h5>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="" aria-valuemin="0"
+                    aria-valuemax="100">{{skillsF.progSkillF}}%</div>
+            </div>
         </div>
     </div>
 </div>
