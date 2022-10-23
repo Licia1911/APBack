@@ -1,4 +1,4 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -13,24 +13,23 @@ import { SkillsbService } from 'src/app/services/skillsb.service';
 })
 export class SkillsBComponent implements OnInit {
 
-  public skillsback:SkillsB[]=[];
-  public skillsback2 = this.skillsbService.getSkillsB();
+  public skillsback: SkillsB[] = [];
   public editskillsback: SkillsB | undefined;
   public deleteskillsback: SkillsB | undefined;
 
-  constructor(private skillsbService:SkillsbService, public autenticacionService: AutenticacionService) { }
-  
+  constructor(private skillsbService: SkillsbService, public autenticacionService: AutenticacionService) { }
+
   isloged = () => this.autenticacionService.loggedIn();
   ngOnInit(): void {
     this.getSkillsback();
   }
 
-  public getSkillsback():void{
+  public getSkillsback(): void {
     this.skillsbService.getSkillsB().subscribe({
-      next:(Response:SkillsB[])=>{
-        this.skillsback=Response;
+      next: (Response: SkillsB[]) => {
+        this.skillsback = Response;
       },
-      error:(error:HttpErrorResponse)=>{
+      error: (error: HttpErrorResponse) => {
         alert(error.message);
       }
     })
@@ -58,12 +57,12 @@ export class SkillsBComponent implements OnInit {
   public onAddSkillsback(addForm: NgForm): void {
     document.getElementById('add-skillsb-form')?.click();
     this.skillsbService.addSkillsB(addForm.value).subscribe({
-      next:(response:SkillsB) => {
+      next: (response: SkillsB) => {
         console.log(response);
         this.getSkillsback();
         addForm.reset();
       },
-      error:(error:HttpErrorResponse) => {
+      error: (error: HttpErrorResponse) => {
         alert(error.message);
         addForm.reset();
       },
@@ -73,23 +72,23 @@ export class SkillsBComponent implements OnInit {
   public onUpdateSkillsback(skillsb: SkillsB): void {
     this.editskillsback = skillsb;
     this.skillsbService.updateSkillsB(skillsb).subscribe({
-      next:(response:SkillsB)=>{
+      next: (response: SkillsB) => {
         console.log(response);
         this.getSkillsback();
       },
-      error:(error:HttpErrorResponse)=>{
+      error: (error: HttpErrorResponse) => {
         alert(error.message);
       },
     });
   }
 
-  public onDeleteSkillsback(SkillsB: number):void{
+  public onDeleteSkillsback(SkillsB: number): void {
     this.skillsbService.deleteSkillsB(SkillsB).subscribe({
-      next:(response:void)=>{
+      next: (response: void) => {
         console.log(response);
         this.getSkillsback();
       },
-      error:(error:HttpErrorResponse)=>{
+      error: (error: HttpErrorResponse) => {
         alert(error.message);
       },
     });
@@ -103,15 +102,12 @@ export class SkillsBComponent implements OnInit {
           event.previousIndex,
           event.currentIndex
         );
-      } else {
-        transferArrayItem(
-          event.previousContainer.data,
-          event.container.data,
-          event.previousIndex,
-          event.currentIndex
-        );
       }
+
     }
+
   }
 
 }
+
+

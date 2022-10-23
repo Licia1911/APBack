@@ -13,7 +13,6 @@ import { SkillsfService } from 'src/app/services/skillsf.service';
 })
 export class SkillsFComponent implements OnInit {
   public skillsfront:SkillsF[]=[];
-  public skillsfront2 = this.skillsfService.getSkillsF();
   public editSkillsfront: SkillsF | undefined;
   public deleteSkillsfront: SkillsF | undefined;
 
@@ -98,13 +97,6 @@ export class SkillsFComponent implements OnInit {
     if (this.autenticacionService.loggedIn()) {
       if (event.previousContainer === event.container) {
         moveItemInArray(
-          event.container.data,
-          event.previousIndex,
-          event.currentIndex
-        );
-      } else {
-        transferArrayItem(
-          event.previousContainer.data,
           event.container.data,
           event.previousIndex,
           event.currentIndex

@@ -14,7 +14,6 @@ import { EducacionService } from 'src/app/services/educacion.service';
 export class EducacionComponent implements OnInit {
 
   public educations: Educacion[] = [];
-  public educations2 = this.educacionService.getEducation();
   public editEducation: Educacion | undefined;
   public deleteEducation: Educacion | undefined;
 
@@ -100,13 +99,6 @@ export class EducacionComponent implements OnInit {
     if (this.autenticacionService.loggedIn()) {
       if (event.previousContainer === event.container) {
         moveItemInArray(
-          event.container.data,
-          event.previousIndex,
-          event.currentIndex
-        );
-      } else {
-        transferArrayItem(
-          event.previousContainer.data,
           event.container.data,
           event.previousIndex,
           event.currentIndex

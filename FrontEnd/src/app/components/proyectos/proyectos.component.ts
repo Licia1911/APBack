@@ -14,7 +14,6 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
 export class ProyectosComponent implements OnInit {
 
   public proyectoss: Proyectos[]=[];
-  public proyectoss2 = this.proyectosService.getProyectos();
   public editProyecto: Proyectos | undefined;
   public deleteProyecto: Proyectos | undefined;
 
@@ -104,14 +103,7 @@ export class ProyectosComponent implements OnInit {
           event.previousIndex,
           event.currentIndex
         );
-      } else {
-        transferArrayItem(
-          event.previousContainer.data,
-          event.container.data,
-          event.previousIndex,
-          event.currentIndex
-        );
-      }
+      } 
     }
   }
 

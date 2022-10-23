@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="proyectos">
     <h1 style="text-align:center"><i class="bi bi-file-code-fill"></i>Proyectos</h1>
 
     <div id="sobreProy" class="col-xs-10 col-md-10 col-lg-10" *ngIf="isloged()">
@@ -28,8 +28,8 @@
                     <p class="card-text">{{proyectos.descPro}}</p>
                 </div>
                 <div class="card-bodyLink">
-                    <a href={{proyectos.demoUrl}} class="card-link">Demo</a>
-                    <a href={{proyectos.repoUrl}} class="card-link">Repositorio</a>
+                    <a href={{proyectos.demoUrl}} class="card-link" target="_blank">Demo</a>
+                    <a href={{proyectos.repoUrl}} class="card-link" target="_blank">Repositorio</a>
                 </div>
             </div>
         </div>

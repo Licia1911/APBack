@@ -17,14 +17,18 @@
                     (click)="onOpenModal('delete', skillsB)"><i class="bi bi-trash"
                         style="font-size: 1rem;"></i></button>
             </div>
-            <h5><i id="itec" class={{skillsB.iconoSkillB}}></i>{{skillsB.tituloSkillB}}</h5>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="" aria-valuemin="0"
-                    aria-valuemax="100">{{skillsB.progSkillB}}%</div>
+                <h5><i id="itec" class={{skillsB.iconoSkillB}}></i>{{skillsB.tituloSkillB}}</h5>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0"
+                        aria-valuemax="100">{{skillsB.progSkillB}}%</div>
             </div>
         </div>
     </div>
 </div>
+<!-- <div> 
+    <button (click)="guardarCambios(skillsback)"
+                            class="btn btn-primary">Guardar cambios</button>
+</div> -->
 
 <!-- Modal Agregar Skill Back -->
 

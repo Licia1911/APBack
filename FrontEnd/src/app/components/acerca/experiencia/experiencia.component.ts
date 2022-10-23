@@ -13,7 +13,6 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 })
 export class ExperienciaComponent implements OnInit {
   public experiencias: Experiencia[]=[];
-  public experiencias2 = this.experienciaService.getExperiencia();
   public editExperiencia: Experiencia | undefined;
   public deleteExperiencia: Experiencia | undefined;
 
@@ -102,14 +101,7 @@ export class ExperienciaComponent implements OnInit {
           event.previousIndex,
           event.currentIndex
         );
-      } else {
-        transferArrayItem(
-          event.previousContainer.data,
-          event.container.data,
-          event.previousIndex,
-          event.currentIndex
-        );
-      }
+      } 
     }
   }
 

@@ -4,7 +4,7 @@
 </div>
 
 <div id="even" cdkDropList [cdkDropListData]="skillssoft" cdkDropListConnectedTo="even"
-    (cdkDropListDropped)="onDrop($event)" #skillssoft2List="cdkDropList">
+    (cdkDropListDropped)="onDrop($event)" #skillssoftList="cdkDropList">
 
     <div class="soft" *ngFor="let skillsS of skillssoft" cdkDrag [cdkDragData]="skillsS"
         cdkDragPreviewContainer="parent">

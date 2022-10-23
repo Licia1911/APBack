@@ -28,4 +28,5 @@ export class SkillsbService {
   public deleteSkillsB(skillsBId: number):Observable<void>{
     return this.http.delete<void>(`${this.apiServerUrl}/api/skillsB/${skillsBId}`);
   }
+
 }
