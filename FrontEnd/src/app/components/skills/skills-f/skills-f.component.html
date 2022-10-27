@@ -8,6 +8,10 @@
     <div class="back" *ngFor="let skillsF of skillsfront" cdkDrag [cdkDragData]="skillsF"
         cdkDragPreviewContainer="parent">
 
+        <div class="iconoMover" cdkDragHandle>
+            <i class="bi bi-arrows-move"></i>
+        </div>
+
         <div class="tec">
             <div *ngIf="isloged()">
                 <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editSkillsFModal"

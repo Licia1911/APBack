@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/skillsS")
-@CrossOrigin(origins = "http://localhost:4200")
 public class SkillsSController {
 
     private final SkillsSService skillsSService;

@@ -7,6 +7,11 @@
 
     <div class="exp" *ngFor="let experiencia of experiencias" cdkDrag [cdkDragData]="experiencia"
         cdkDragPreviewContainer="parent">
+        
+        <div class="iconoMover" cdkDragHandle>
+            <i class="bi bi-arrows-move"></i>
+        </div>
+        
         <div class="card bg-transparent mb-3" style="max-width: 15rem;">
             <div class="card-header">
 

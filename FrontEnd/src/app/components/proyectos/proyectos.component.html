@@ -11,6 +11,9 @@
 
         <div id="proyInfo" class="col-xs-10 col-md-4 col-lg-4" *ngFor="let proyectos of proyectoss" cdkDrag
             [cdkDragData]="proyectos" cdkDragPreviewContainer="parent">
+            <div class="iconoMover" cdkDragHandle>
+                <i class="bi bi-arrows-move"></i>
+            </div>
 
             <div *ngIf="isloged()">
                 <button id="btnEdit" type="button" data-bs-toggle="modal" data-bs-target="#editProyectosModal"

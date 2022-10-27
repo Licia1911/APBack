@@ -8,6 +8,10 @@
 
     <div class="soft" *ngFor="let skillsS of skillssoft" cdkDrag [cdkDragData]="skillsS"
         cdkDragPreviewContainer="parent">
+
+        <div class="iconoMover" cdkDragHandle>
+            <i class="bi bi-arrows-move"></i>
+        </div>
         
         <div class="tec">
             <div *ngIf="isloged()">
