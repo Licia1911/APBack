@@ -19,7 +19,7 @@ Dentro del banner encontramos información personal, nombre, apellido y titulo. 
 <p align="left"> :hammer:Funcionalidad:</p>
 
 <p align="left"> :star:Menú:</p>
-Al presionar el ícono aparece la barra lateral donde podemos ver la foto de perfil, los links a las redes y el índice del portfolio y el logo de Argentina Programa. Cada uno de los link tiene la funcionalidad de redirigirnos a las diferentes páginas.
+Al presionar el ícono aparece la barra lateral donde podemos ver la foto de perfil, los links a las redes, el índice del portfolio y el logo de Argentina Programa. Cada uno de los link tiene la funcionalidad de redirigirnos a las diferentes páginas.
 
 ![navbar](https://user-images.githubusercontent.com/97195642/198839488-ec16129b-f4fb-469f-97c1-b37092f667f9.PNG)
 
@@ -37,7 +37,7 @@ En esta sección vemos información profesional resumida incluyendo Educación y
 ![acercaDeMi](https://user-images.githubusercontent.com/97195642/198840310-d8713436-5f59-45fd-acfe-c024d3846472.PNG)
 
 <p align="left"> :hammer:Funcionalidad:</p>
-Estando logueados vemos que aparece el botón para agregar y los íconos de editar y borrar. Vemos, tambien, el ícono de cuatro flechasque nos permiten mover las tarjetas y si estamos logeados podemos cambiarlas de lugar.
+Estando logueados vemos que aparece el botón para agregar y los íconos de editar y borrar. Vemos, tambien, el ícono de cuatro flechas que nos permiten mover las tarjetas y si estamos logeados podemos cambiarlas de lugar.
 
 ![ejEditar](https://user-images.githubusercontent.com/97195642/198841009-1f50eb3a-084d-4e54-acd9-b204f515a059.PNG)
 ![ejBorrar](https://user-images.githubusercontent.com/97195642/198841018-a0719fb1-b53b-4dbf-b264-cd2fbfffa494.PNG)
@@ -56,7 +56,7 @@ Todas las habilidades también son editables; cada uno de los items pueden modif
 
 <h3 align="left"> :computer:Proyectos:</h3>
 
-En esta seccion se encuentra la información sobre los proyectos que desarrolé. Cada tarjeta contiene una imagen del proyecto, la descripción y los link al demo y al repositorio.
+En esta seccion se encuentra la información sobre los proyectos que desarrollé. Cada tarjeta contiene una imagen del proyecto, la descripción y los link al demo y al repositorio.
 
 ![proyectos](https://user-images.githubusercontent.com/97195642/198844463-a994f44e-53df-4a85-a388-c2702bb25d4b.PNG)
 
