@@ -10,7 +10,7 @@
    
 <h2 align="center"> :computer:Estructura:computer: </h2>
 
-<h3 align="left"> :computer:Banner</h3>
+<h3 align="left"> :computer:Banner:</h3>
 
 ![banner](https://user-images.githubusercontent.com/97195642/198838036-d861a6d3-5f27-4004-a1c5-97361f481019.PNG)
 
@@ -28,6 +28,7 @@ Cuando presionamos se abre el modal para colocar el email y la contraseña. Esta
 
 ![Login](https://user-images.githubusercontent.com/97195642/198839996-ab8ebd83-e367-487b-9342-9db52fab8917.PNG)
 
+![ejEditPers](https://user-images.githubusercontent.com/97195642/198845392-a958c1e9-c2db-40c0-99a9-037dba0aedb5.PNG)
 
 <h3 align="left"> :computer:Acerca de mí:</h3>
 
@@ -52,5 +53,32 @@ Todas las habilidades también son editables; cada uno de los items pueden modif
 
 
 ![ejSkills](https://user-images.githubusercontent.com/97195642/198842100-ef35484c-8fb4-4c9e-9d19-82c098093e91.PNG)
+
+<h3 align="left"> :computer:Proyectos:</h3>
+
+En esta seccion se encuentra la información sobre los proyectos que desarrolé. Cada tarjeta contiene una imagen del proyecto, la descripción y los link al demo y al repositorio.
+
+![proyectos](https://user-images.githubusercontent.com/97195642/198844463-a994f44e-53df-4a85-a388-c2702bb25d4b.PNG)
+
+<p align="left"> :hammer:Funcionalidad:</p>
+Cada uno de los botones(Demo y Repo) tienen la funcionalidad de redirigirnos; ya sea a la demostración de la página o al repositorio de GitHub.
+Como en toda la página, cada una de las tarjetas puede ser editada (modificar la imagen, la descripción o los link). También pueden agregarse proyectos o eliminarse.
+
+
+![ejEditProy](https://user-images.githubusercontent.com/97195642/198844974-ba9b5c00-bd8d-43da-9ac3-da656e4a5eda.PNG)
+![elBorrarProy](https://user-images.githubusercontent.com/97195642/198845029-5323caf7-1912-440c-8d62-c8d87ef9ce15.PNG)
+
+<h3 align="left">:pushpin:Acceso al proyecto::pushpin:</h3>
+
+https://argproglgc.web.app/portfolio
+
+<h3 align="left">:construction:Construido con::construction:</h3>
+
+![image](https://user-images.githubusercontent.com/97195642/198845837-18542018-c0b9-483c-98c6-9a0a4574706b.png)
+
+<h3 align="left">:black_nib:Construido por::black_nib:</h3>
+
+[<img src="https://i.ibb.co/XtwDQYS/octocat-1667066715779-1-1.png" width=115>Licia Carreras](https://github.com/Licia1911)
+
 
 
